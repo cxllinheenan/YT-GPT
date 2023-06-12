@@ -1,16 +1,16 @@
 # Bring in Deps
-import os
+
 from urllib import response
 from apikey import apikey
 
-import streamlit as st
+import streamlit as st 	                                                                    	 	 
 from langchain.llms import OpenAI
 from langchain.prompts  import PromptTemplate
 from langchain.chains import LLMChain, SequentialChain
 from langchain.memory import ConversationBufferMemory
 from langchain.utilities import WikipediaAPIWrapper
 
-os.environ['OPENAI_API_KEY'] = apikey
+openai_api_key = st.sidebar.text_input('OpenAI API Key')
 #App Framework
 st.title('🦜 A Researching AI for YouTube Videos')
 prompt = st.text_input('Write a short about')
